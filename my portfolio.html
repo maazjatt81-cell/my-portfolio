@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Custom Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                cyan: "#06b6d4",
+                indigo: "#6366f1",
+                dark: "#0f172a",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      /* Custom Glassmorphism Styles */
+      .glass-card {
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .glass-nav {
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white"
+  >
+    <!-- 1. Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a
+            href="#home"
+            class="flex items-center gap-2 font-bold text-xl tracking-tight text-white hover:text-cyan-400 transition-colors"
+          >
+            <i data-lucide="code-2" class="w-6 h-6 text-cyan-400"></i>
+            <span>Developer<span class="text-cyan-400">Portfolio</span></span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a
+              href="#home"
+              class="text-slate-300 hover:text-cyan-400 transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-slate-300 hover:text-cyan-400 transition-colors"
+              >About</a
+            >
+            <a
+              href="#projects"
+              class="text-slate-300 hover:text-cyan-400 transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#services"
+              class="text-slate-300 hover:text-cyan-400 transition-colors"
+              >Services</a
+            >
+            <a
+              href="#contact"
+              class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-indigo-500/25"
+              >Get in Touch</a
+            >
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              id="menu-btn"
+              aria-label="Toggle Navigation Menu"
+              class="p-2 text-slate-300 hover:text-white focus:outline-none"
+            >
+              <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden glass-nav border-t border-slate-800 px-4 pt-4 pb-6 space-y-3"
+      >
+        <a
+          href="#home"
+          class="mobile-link block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="mobile-link block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white"
+          >About</a
+        >
+        <a
+          href="#projects"
+          class="mobile-link block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white"
+          >Projects</a
+        >
+        <a
+          href="#services"
+          class="mobile-link block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800 hover:text-white"
+          >Services</a
+        >
+        <a
+          href="#contact"
+          class="mobile-link block px-3 py-2 rounded-md bg-indigo-600 text-white text-center font-semibold"
+          >Get in Touch</a
+        >
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <!-- 2. Hero Section -->
+      <section
+        id="home"
+        class="relative min-h-[90vh] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      >
+        <!-- Subtle Radial Gradient Background Effect -->
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_50%)] pointer-events-none"
+        ></div>
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.15),transparent_50%)] pointer-events-none"
+        ></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+          <!-- Status Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium mb-8"
+          >
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span>Available for Freelance & Full-time Roles</span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1
+            class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight"
+          >
+            Hi, I'm a Muhammad Noman Full stack developer, Web Developer
+            building
+            <span
+              class="bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent"
+              >practical web apps</span
+            >
+            & business tools.
+          </h1>
+
+          <!-- Subtitle -->
+          <p
+            class="text-lg sm:text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-normal"
+          >
+            Specializing in custom web applications, financial ledger systems,
+            automated workflows, and high-converting websites.
+          </p>
+
+          <!-- Action Buttons -->
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <a
+              href="#projects"
+              class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2"
+            >
+              <span>View Projects</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a
+              href="#contact"
+              class="w-full sm:w-auto px-8 py-3.5 rounded-xl glass-card text-slate-200 hover:bg-slate-800 hover:text-white font-semibold border border-slate-700 transition-all duration-200 flex items-center justify-center gap-2"
+            >
+              <span>Get in Touch</span>
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. About Me & Tech Stack -->
+      <section
+        id="about"
+        class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Bio Text -->
+          <div class="lg:col-span-6 space-y-6">
+            <div
+              class="inline-flex items-center gap-2 text-indigo-400 font-semibold text-sm uppercase tracking-wider"
+            >
+              <i data-lucide="user" class="w-4 h-4"></i>
+              <span>About Me</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">
+              Turning Business Problems into Clean Software
+            </h2>
+            <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+              I'm a passionate developer focused on building functional,
+              responsive, and user-friendly web applications. From custom ledger
+              & financial management tools to automated inventory workflows and
+              web utilities, I love turning everyday business problems into
+              clean software solutions.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="glass-card p-4 rounded-xl">
+                <h3 class="text-cyan-400 font-bold text-2xl">100%</h3>
+                <p class="text-xs text-slate-400 mt-1">
+                  Responsive & Optimized
+                </p>
+              </div>
+              <div class="glass-card p-4 rounded-xl">
+                <h3 class="text-indigo-400 font-bold text-2xl">Fast</h3>
+                <p class="text-xs text-slate-400 mt-1">
+                  Execution & Automated Flow
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div class="lg:col-span-6 space-y-6">
+            <h3 class="text-xl font-bold text-white mb-4">
+              Technical Stack & Tools
+            </h3>
+
+            <!-- Frontend -->
+            <div class="glass-card p-5 rounded-xl">
+              <span
+                class="text-xs font-bold text-cyan-400 uppercase tracking-wider block mb-3"
+                >Frontend Development</span
+              >
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i
+                    data-lucide="code"
+                    class="w-3.5 h-3.5 text-orange-400"
+                  ></i>
+                  HTML5</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i
+                    data-lucide="palette"
+                    class="w-3.5 h-3.5 text-blue-400"
+                  ></i>
+                  CSS3</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i
+                    data-lucide="terminal"
+                    class="w-3.5 h-3.5 text-yellow-400"
+                  ></i>
+                  JavaScript (ES6+)</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i data-lucide="wind" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  Tailwind CSS</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i
+                    data-lucide="atom"
+                    class="w-3.5 h-3.5 text-indigo-400"
+                  ></i>
+                  React</span
+                >
+              </div>
+            </div>
+
+            <!-- Automation & Tools -->
+            <div class="glass-card p-5 rounded-xl">
+              <span
+                class="text-xs font-bold text-indigo-400 uppercase tracking-wider block mb-3"
+                >Automation & Tooling</span
+              >
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i
+                    data-lucide="file-spreadsheet"
+                    class="w-3.5 h-3.5 text-emerald-400"
+                  ></i>
+                  Excel VBA / Automation</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i data-lucide="cpu" class="w-3.5 h-3.5 text-amber-400"></i>
+                  Web Utilities</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i
+                    data-lucide="git-branch"
+                    class="w-3.5 h-3.5 text-red-400"
+                  ></i>
+                  Git</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i
+                    data-lucide="github"
+                    class="w-3.5 h-3.5 text-slate-200"
+                  ></i>
+                  GitHub</span
+                >
+              </div>
+            </div>
+
+            <!-- Deployment -->
+            <div class="glass-card p-5 rounded-xl">
+              <span
+                class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-3"
+                >Deployment & Cloud</span
+              >
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i data-lucide="cloud" class="w-3.5 h-3.5 text-teal-400"></i>
+                  Netlify</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i data-lucide="triangle" class="w-3.5 h-3.5 text-white"></i>
+                  Vercel</span
+                >
+                <span
+                  class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 text-sm flex items-center gap-2"
+                  ><i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400"></i>
+                  GitHub Pages</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Projects Section -->
+      <section
+        id="projects"
+        class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800"
+      >
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div
+            class="inline-flex items-center gap-2 text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-2"
+          >
+            <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+            <span>Portfolio</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white">
+            Featured Projects & Proof of Work
+          </h2>
+          <p class="text-slate-400 mt-3 text-base">
+            A collection of custom applications built to solve practical
+            workflow and business needs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 (Featured) -->
+          <div
+            class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 group hover:-translate-y-1"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold border border-indigo-500/20"
+                  >Featured App</span
+                >
+                <i
+                  data-lucide="wallet"
+                  class="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform"
+                ></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors"
+              >
+                Digital Khata / Ledger Management App
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                A comprehensive digital ledger application that helps
+                micro-businesses track real-time income, expenses, and customer
+                credit seamlessly.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >JavaScript</span
+                >
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >Local Storage</span
+                >
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >Web Manifest</span
+                >
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >Netlify</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 pt-4 border-t border-slate-800"
+              >
+                <a
+                  href="https://hanjrazaraifarm.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 py-2 px-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium text-center flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
+                  Demo
+                </a>
+                <a
+                  href="https://hanjrazaraifarm.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors border border-slate-700"
+                >
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 group hover:-translate-y-1"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20"
+                  >Automation</span
+                >
+                <i
+                  data-lucide="boxes"
+                  class="w-6 h-6 text-emerald-400 group-hover:scale-110 transition-transform"
+                ></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors"
+              >
+                Automated Inventory Management System
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                An automated inventory system designed to monitor stock
+                deficits, calculate real-time reorder thresholds, and generate
+                instant notification alerts.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >Excel VBA</span
+                >
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >Automation Scripts</span
+                >
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >Logic Workflows</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 pt-4 border-t border-slate-800"
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 py-2 px-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium text-center flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
+                  Demo
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors border border-slate-700"
+                >
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 group hover:-translate-y-1"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold border border-cyan-500/20"
+                  >Utility Suite</span
+                >
+                <i
+                  data-lucide="calculator"
+                  class="w-6 h-6 text-indigo-400 group-hover:scale-110 transition-transform"
+                ></i>
+              </div>
+              <h3
+                class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors"
+              >
+                Web Utility & Calculator Suite
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                A lightweight, fast suite of web tools designed for daily
+                utility calculations, data formatting, and instant business
+                math.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >HTML5</span
+                >
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >CSS3</span
+                >
+                <span
+                  class="text-xs px-2.5 py-1 rounded-md bg-slate-800 text-slate-300"
+                  >Vanilla JS</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 pt-4 border-t border-slate-800"
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 py-2 px-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium text-center flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Live
+                  Demo
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="py-2 px-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium flex items-center justify-center gap-1.5 transition-colors border border-slate-700"
+                >
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Services Section -->
+      <section
+        id="services"
+        class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800"
+      >
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div
+            class="inline-flex items-center gap-2 text-indigo-400 font-semibold text-sm uppercase tracking-wider mb-2"
+          >
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>What I Offer</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white">
+            Services & Expertise
+          </h2>
+          <p class="text-slate-400 mt-3 text-base">
+            Custom tailored web solutions focused on functionality, speed, and
+            real-world business value.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="glass-card rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 border border-slate-800"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-6"
+            >
+              <i data-lucide="layout" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Custom Web Applications
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Responsive UI, custom logic implementation, dynamic data binding,
+              and seamless cloud deployments for modern web apps.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="glass-card rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 border border-slate-800"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6"
+            >
+              <i data-lucide="workflow" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Business Automation Systems
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Automated stock & inventory trackers, custom Excel VBA macros, and
+              streamlined business logic workflows.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="glass-card rounded-2xl p-8 hover:bg-slate-800/80 transition-all duration-300 border border-slate-800"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6"
+            >
+              <i data-lucide="zap" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Utility Tools & Landing Pages
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Fast-loading web utility tools, SEO-ready calculators, and
+              high-converting modern landing pages or portfolio sites.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Contact Section -->
+      <section
+        id="contact"
+        class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <!-- Contact Details -->
+          <div class="lg:col-span-5 space-y-8">
+            <div>
+              <div
+                class="inline-flex items-center gap-2 text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-2"
+              >
+                <i data-lucide="message-square" class="w-4 h-4"></i>
+                <span>Get in Touch</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Let's Work Together
+              </h2>
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                Have a project in mind, need custom automation, or looking for a
+                developer? Send a message and let me know how I can help!
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 p-4 rounded-xl glass-card">
+                <div
+                  class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400"
+                >
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block"
+                    >Email Address</span
+                  >
+                  <a
+                    href="mailto:developer@example.com"
+                    class="text-slate-200 hover:text-cyan-400 font-medium text-sm"
+                    >developer@example.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 p-4 rounded-xl glass-card">
+                <div
+                  class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400"
+                >
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block">Location</span>
+                  <span class="text-slate-200 font-medium text-sm"
+                    >Remote / Worldwide</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="pt-2">
+              <span
+                class="text-xs text-slate-400 block mb-3 uppercase tracking-wider font-semibold"
+                >Connect on Socials</span
+              >
+              <div class="flex items-center gap-3">
+                <a
+                  href="#"
+                  aria-label="GitHub Profile"
+                  class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400 transition-colors"
+                >
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a
+                  href="#"
+                  aria-label="LinkedIn Profile"
+                  class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400 transition-colors"
+                >
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a
+                  href="#"
+                  aria-label="WhatsApp / X"
+                  class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white hover:border-cyan-400 transition-colors"
+                >
+                  <i data-lucide="message-circle" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="lg:col-span-7">
+            <form
+              id="contact-form"
+              class="glass-card p-8 rounded-2xl space-y-6"
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="John Doe"
+                    class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2"
+                    >Your Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    placeholder="john@example.com"
+                    class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="subject"
+                  class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  required
+                  placeholder="Project Inquiry / Freelance Role"
+                  class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  required
+                  placeholder="Tell me about your project..."
+                  class="w-full px-4 py-3 rounded-xl bg-slate-800/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all duration-200 shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2"
+              >
+                <span>Send Message</span>
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+
+              <!-- Success Alert Message -->
+              <div
+                id="form-feedback"
+                class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm flex items-center gap-2"
+              >
+                <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0"></i>
+                <span>Thank you! Your message has been sent successfully.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 bg-slate-950">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-slate-400 text-sm">
+          &copy; <span id="year"></span> Developer Portfolio. All rights
+          reserved.
+        </p>
+        <a
+          href="#home"
+          class="text-xs text-slate-400 hover:text-cyan-400 flex items-center gap-1 transition-colors"
+        >
+          <span>Back to top</span>
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- JavaScript logic -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Dynamic Year in Footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Contact Form Dynamic Submission Feedback
+      const contactForm = document.getElementById("contact-form");
+      const submitBtn = document.getElementById("submit-btn");
+      const formFeedback = document.getElementById("form-feedback");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Disable button temporarily & change state
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-75", "cursor-not-allowed");
+        submitBtn.innerHTML = `<span>Sending...</span>`;
+
+        setTimeout(() => {
+          submitBtn.classList.remove("opacity-75", "cursor-not-allowed");
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<span>Send Message</span><i data-lucide="send" class="w-4 h-4"></i>`;
+          lucide.createIcons();
+
+          // Reset form & show feedback
+          contactForm.reset();
+          formFeedback.classList.remove("hidden");
+
+          // Hide message after 5 seconds
+          setTimeout(() => {
+            formFeedback.classList.add("hidden");
+          }, 5000);
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
